@@ -1,0 +1,5 @@
+__pycache__/
+db.sqlite3
+bbb/__pycache__/*.pyc
+uploads
+bbb/migrations/0*.py

@@ -1,0 +1,226 @@
+{
+	"info": {
+		"_postman_id": "67fc98d1-f1be-4ab1-8bd3-1947eb79a1a3",
+		"name": "CRUD_BBB",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26105429"
+	},
+	"item": [
+		{
+			"name": "all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios"
+					]
+				},
+				"description": "crud para inscrição no BBB"
+			},
+			"response": []
+		},
+		{
+			"name": "specific user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/c49b97cb-127f-4857-95af-13c480eadefd",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios",
+						"c49b97cb-127f-4857-95af-13c480eadefd"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/98544e62-2bee-4448-bd7f-246fa3dfe7e2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios",
+						"98544e62-2bee-4448-bd7f-246fa3dfe7e2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "create_user",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "João dwçàê we",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "561.809.342-38",
+							"type": "text"
+						},
+						{
+							"key": "street",
+							"value": "Rua que eu quiser",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "SP",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "SaoPaulo",
+							"type": "text"
+						},
+						{
+							"key": "number_street",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "23 23323-2323",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "wer@reoi.com",
+							"type": "text"
+						},
+						{
+							"key": "registration_video",
+							"type": "file",
+							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+						},
+						{
+							"key": "born_date",
+							"value": "2000-03-01",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "edit_user",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "full_name",
+							"value": "issomesmow",
+							"type": "text"
+						},
+						{
+							"key": "cpf",
+							"value": "562.809.342-37",
+							"type": "text"
+						},
+						{
+							"key": "street",
+							"value": "Rua que eu quiser",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "SP",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "SaoPaulo",
+							"type": "text"
+						},
+						{
+							"key": "number_street",
+							"value": "12",
+							"type": "text"
+						},
+						{
+							"key": "phone",
+							"value": "23 23323-2323",
+							"type": "text"
+						},
+						{
+							"key": "email",
+							"value": "wer@reoi.com",
+							"type": "text"
+						},
+						{
+							"key": "upload",
+							"type": "file",
+							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+						},
+						{
+							"key": "born_date",
+							"value": "2000-03-02",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/4d65d1e3-2030-4bb9-8a7b-a585398b7920/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"usuarios",
+						"4d65d1e3-2030-4bb9-8a7b-a585398b7920",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
