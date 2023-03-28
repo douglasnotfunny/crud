@@ -1,75 +1,11 @@
 {
 	"info": {
-		"_postman_id": "67fc98d1-f1be-4ab1-8bd3-1947eb79a1a3",
-		"name": "CRUD_BBB",
+		"_postman_id": "585e1d7b-30d2-496a-9457-dd792b75037f",
+		"name": "CRUD_BBB_DEPLOY",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "26105429"
 	},
 	"item": [
-		{
-			"name": "all users",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/usuarios",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"usuarios"
-					]
-				},
-				"description": "crud para inscrição no BBB"
-			},
-			"response": []
-		},
-		{
-			"name": "specific user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/usuarios/c49b97cb-127f-4857-95af-13c480eadefd",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"usuarios",
-						"c49b97cb-127f-4857-95af-13c480eadefd"
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "delete user",
-			"request": {
-				"method": "DELETE",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/usuarios/c49b97cb-127f-4857-95af-13c480eadefd/",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"usuarios",
-						"c49b97cb-127f-4857-95af-13c480eadefd",
-						""
-					]
-				}
-			},
-			"response": []
-		},
 		{
 			"name": "create_user",
 			"request": {
@@ -80,12 +16,12 @@
 					"formdata": [
 						{
 							"key": "full_name",
-							"value": "João dwçàê we",
+							"value": "Eduardo Fred",
 							"type": "text"
 						},
 						{
 							"key": "cpf",
-							"value": "561.899.342-38",
+							"value": "561.809.342-30",
 							"type": "text"
 						},
 						{
@@ -131,7 +67,73 @@
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/usuarios/",
+					"raw": "http://douglassg10.pythonanywhere.com/api/usuarios/",
+					"protocol": "http",
+					"host": [
+						"douglassg10",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "all users",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://douglassg10.pythonanywhere.com/api/usuarios/",
+					"protocol": "http",
+					"host": [
+						"douglassg10",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "specific user",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://douglassg10.pythonanywhere.com/api/usuarios/f1cd6b39-c57a-4038-9129-e8dc13ace962",
+					"protocol": "http",
+					"host": [
+						"douglassg10",
+						"pythonanywhere",
+						"com"
+					],
+					"path": [
+						"api",
+						"usuarios",
+						"f1cd6b39-c57a-4038-9129-e8dc13ace962"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete user",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8000/api/usuarios/edec0243-0323-4f02-96be-2a5fc46bdf27",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -140,7 +142,7 @@
 					"path": [
 						"api",
 						"usuarios",
-						""
+						"edec0243-0323-4f02-96be-2a5fc46bdf27"
 					]
 				}
 			},
@@ -156,7 +158,7 @@
 					"formdata": [
 						{
 							"key": "full_name",
-							"value": "issomesmojnvf",
+							"value": "issomesmow",
 							"type": "text"
 						},
 						{
@@ -166,7 +168,7 @@
 						},
 						{
 							"key": "street",
-							"value": "Onde eu estou",
+							"value": "Rua que eu quiser",
 							"type": "text"
 						},
 						{
@@ -186,7 +188,7 @@
 						},
 						{
 							"key": "phone",
-							"value": "23 23323-2323",
+							"value": "23 23323-2327",
 							"type": "text"
 						},
 						{
@@ -201,22 +203,23 @@
 						},
 						{
 							"key": "born_date",
-							"value": "2000-03-01",
+							"value": "2000-03-02",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/usuarios/29b4df55-81f0-4e9c-b6d9-062e43ae18ab/",
+					"raw": "http://douglassg10.pythonanywhere.com/api/usuarios/f1cd6b39-c57a-4038-9129-e8dc13ace962/",
 					"protocol": "http",
 					"host": [
-						"localhost"
+						"douglassg10",
+						"pythonanywhere",
+						"com"
 					],
-					"port": "8000",
 					"path": [
 						"api",
 						"usuarios",
-						"29b4df55-81f0-4e9c-b6d9-062e43ae18ab",
+						"f1cd6b39-c57a-4038-9129-e8dc13ace962",
 						""
 					]
 				}
