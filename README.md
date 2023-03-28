@@ -1,8 +1,8 @@
 # CRUD
 
-Essa aplicação tem como objetivo simular a inscrição de usuário no BBB 24 via uso de API Rest. Foi usada a linguagem Python na versão 3.10 e a framework web Django-rest-framework (DRF), pela sua facilidade e agilidade para se construir um CRUD simples.
+Essa aplicação tem como objetivo simular a inscrição de usuário no BBB 24 via uso de API Rest. Foi usada a linguagem Python na versão 3.10 e a framework web Django-rest-framework (DRF).
 
-Para usa-la localmente siga os passos abaixo:
+Para usá-la localmente siga os passos abaixo:
 
   1. Clone o projeto atual:
   
@@ -28,7 +28,7 @@ Para usa-la localmente siga os passos abaixo:
   
     python manage.py makemigrations
 
-  6. Realize a migração dos dados
+  6. Realize a migração da tabela de cadastro
     
     python manage.py migrate
   
@@ -36,7 +36,7 @@ Para usa-la localmente siga os passos abaixo:
     
     python manage.py createsuperuser
   
-  7.2. Em alguns casos a criação não funciona com o comando acima, mas o comando abaixo pode ser usado
+  7.2. Caso a criação do superusuário com o comando acima não funcione, utilize o seguinte comando:
     
     winpty python manage.py createsuperuser
   
@@ -48,6 +48,6 @@ Para usa-la localmente siga os passos abaixo:
   
   9.1. Para testar o CRUD dos candidatos do BBB 24 pode ser usada a tela http://localhost:8000/api/usuarios/ 
   
-  9.2. Como a aplicação foi criada em Django Rest, também pode ser usado o POSTMAN para envio das informações. Nesse repositório contem a collection usada para testes locais, basta importar o arquivo de nome CRUD_BBB.postman_collection.json, que se encontra na raiz do projeto
+  9.2. Como a aplicação foi criada em Django Rest, também pode ser usado o POSTMAN para envio das informações. Nesse repositório contém a collection usada para testes locais. Basta importar o arquivo de nome CRUD_BBB.postman_collection.json que se encontra na raiz do projeto.
   
   10. A API também foi deployada no link com os mesmos path http://www.pythonanywhere.com/user/douglassg10/
