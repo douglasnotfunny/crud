@@ -50,4 +50,4 @@ Para usa-la localmente siga os passos abaixo:
   
   9.2. Como a aplicação foi criada em Django Rest, também pode ser usado o POSTMAN para envio das informações. Nesse repositório contem a collection usada para testes locais, basta importar o arquivo de nome CRUD_BBB.postman_collection.json, que se encontra na raiz do projeto
   
-  9.3. Outra opção para teste
+  10. A API também foi deployada no link com os mesmos path http://www.pythonanywhere.com/user/douglassg10/
