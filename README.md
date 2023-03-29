@@ -2,6 +2,16 @@
 
 Essa aplicação tem como objetivo simular a inscrição de usuário no BBB 24 via uso de API Rest. Foi usada a linguagem Python na versão 3.10 e a framework web Django-rest-framework (DRF).
 
+Antes de iniciar verifique se tem o Redis instalado. Esse projeto utiliza essa aplicação para salvar os dados em cache.
+
+Se usar windows baixo com o link:
+
+  https://github.com/MicrosoftArchive/redis/releases/download/win-3.2.100/Redis-x64-3.2.100.msi
+  
+Se usar o Linux siga o tutorial no link abaixo:
+
+  https://redis.io/docs/getting-started/installation/install-redis-on-linux/
+  
 Para usá-la localmente siga os passos abaixo:
 
   1. Clone o projeto atual:
