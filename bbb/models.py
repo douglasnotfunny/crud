@@ -17,6 +17,7 @@ class Usuarios(models.Model):
         verbose_name_plural = 'Usuario'
 
     id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
+    registration_date = models.DateTimeField(default=date, null=True)
     full_name = models.CharField(
                                  max_length=255,
                                  null=False,
