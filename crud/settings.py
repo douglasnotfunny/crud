@@ -108,7 +108,7 @@ CACHES = {
         "OPTIONS": {
             "CLIENT_CLASS": "django_redis.client.DefaultClient"
         },
-        "KEY_PREFIX": "crud"
+        "KEY_PREFIX": "crud_bbb"
     }
 }
 
