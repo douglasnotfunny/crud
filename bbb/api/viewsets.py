@@ -12,20 +12,27 @@ from bbb.models import Usuarios
 from bbb.tasks import list_id
 from .serializers import UsuariosSerializer
 
-
 class UsuariosPagination(PageNumberPagination):
     page_size = 2
 
 class UsuariosViewSet(viewsets.ModelViewSet):
-    queryset = Usuarios.objects.all()
     serializer_class = UsuariosSerializer
     pagination_class = UsuariosPagination
     renderer_classes = [JSONRenderer]
 
+    def get_queryset(self):
+        queryset = Usuarios.objects.all()
+        if self.request.method == 'GET':
+            # faça a filtragem necessária apenas no caso de GET
+            cpf = self.request.GET.get('cpf', None)
+            if cpf:
+                queryset = queryset.filter(cpf=cpf)
+        return queryset
+
     @method_decorator(vary_on_cookie)
     @method_decorator(cache_page(60*2))
-    def dispatch(self, *args, **kwargs):
-        user_ids = self.queryset.values_list('id', flat=True)
+    def list(self, *args, **kwargs):
+        user_ids = self.get_queryset().values_list('id', flat=True)
         result = list_id.delay(list(user_ids), 2)
         print("Task id in Celery", result)
-        return super(UsuariosViewSet, self).dispatch(*args, **kwargs)
+        return super(UsuariosViewSet, self).list(*args, **kwargs)
