@@ -1,18 +1,22 @@
 import logging
 import datetime
 
+from django.http import Http404
+from django.shortcuts import get_object_or_404
+from rest_framework.decorators import action
 from django.utils.decorators import method_decorator
 from django.views.decorators.cache import cache_page
 from django.views.decorators.vary import vary_on_cookie
 from django.db.models import Q
 
+from rest_framework.exceptions import NotFound
 from rest_framework.renderers import JSONRenderer
 from rest_framework import status, viewsets
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.response import Response
 
 from bbb.models import Usuarios
-from bbb.tasks import list_id
+from bbb.tasks import create_async
 from .serializers import UsuariosSerializer
 
 
@@ -22,42 +26,40 @@ month = date.month
 day = date.day
 
 class UsuariosPagination(PageNumberPagination):
-    page_size = 2
+    page_size = 10
 
 class UsuariosViewSet(viewsets.ModelViewSet):
     serializer_class = UsuariosSerializer
     pagination_class = UsuariosPagination
 
-    def get_queryset(self):
-        print('get_queryset()')
-        queryset = None
-
-        if self.request.method == 'GET':
-            cpf = self.request.GET.get('cpf', '')
-            full_name = self.request.GET.get('full_name', '')
-            state = self.request.GET.get('state', '')
-            city = self.request.GET.get('city', '')
-            start_date = self.request.GET.get('start_date', datetime.date(year-18, month, day))
-            end_date = self.request.GET.get('end_date', datetime.date(year-70, month, day))
-
-            if cpf or full_name or state or city:
-                print('get_queryset().FILTER')
-                queryset = Usuarios.objects.filter(Q(cpf=cpf)|
-                                                   Q(full_name=full_name)|
-                                                   Q(state=state)|
-                                                   Q(born_date__gt=start_date)|
-                                                   Q(born_date__lt=end_date))
-            else:
-                print('get_queryset().ALL')
-                queryset = Usuarios.objects.all()
-
-        return queryset
-
     @method_decorator(vary_on_cookie)
     @method_decorator(cache_page(60*2))
     def list(self, *args, **kwargs):
         print('list()')
-        user_ids = self.get_queryset().values_list('id', flat=True)
-        result = list_id.delay(list(user_ids), 2)
-        print("Task id in Celery", result)
+        self.queryset = Usuarios.objects.all()
         return super(UsuariosViewSet, self).list(*args, **kwargs)
+
+    def create(self, request, *args, **kwargs):
+        print("create()")
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        headers = self.get_success_headers(serializer.data)
+        return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+
+    def update(self, request, pk=None, *args, **kwargs):
+        self.queryset = Usuarios.objects.filter(pk=pk)
+        obj = get_object_or_404(self.queryset, pk=pk)
+        serializer = self.get_serializer(obj, data=request.data, partial=True)
+        serializer.is_valid(raise_exception=True)
+        serializer.save()
+        return Response(serializer.data, status=status.HTTP_200_OK)
+
+    def destroy(self, request, *args, **kwargs):
+        try:
+            instance = Usuarios.objects.get(pk=kwargs['pk'])
+        except Usuarios.DoesNotExist:
+            raise NotFound('Object not found')
+
+        instance.delete()
+        return Response(status=status.HTTP_204_NO_CONTENT)
