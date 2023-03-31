@@ -28,33 +28,12 @@
 			"response": []
 		},
 		{
-			"name": "specific user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://localhost:8000/api/usuarios/c49b97cb-127f-4857-95af-13c480eadefd",
-					"protocol": "http",
-					"host": [
-						"localhost"
-					],
-					"port": "8000",
-					"path": [
-						"api",
-						"usuarios",
-						"c49b97cb-127f-4857-95af-13c480eadefd"
-					]
-				}
-			},
-			"response": []
-		},
-		{
 			"name": "delete user",
 			"request": {
 				"method": "DELETE",
 				"header": [],
 				"url": {
-					"raw": "http://localhost:8000/api/usuarios/c49b97cb-127f-4857-95af-13c480eadefd/",
+					"raw": "http://localhost:8000/api/usuarios/cd857cb4-777e-4527-ab96-46fc03d8caa6/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -63,7 +42,7 @@
 					"path": [
 						"api",
 						"usuarios",
-						"c49b97cb-127f-4857-95af-13c480eadefd",
+						"cd857cb4-777e-4527-ab96-46fc03d8caa6",
 						""
 					]
 				}
@@ -80,12 +59,12 @@
 					"formdata": [
 						{
 							"key": "full_name",
-							"value": "João dwçàê we",
+							"value": "gihuj dwçàê w",
 							"type": "text"
 						},
 						{
 							"key": "cpf",
-							"value": "561.899.342-38",
+							"value": "100.819.009-09",
 							"type": "text"
 						},
 						{
@@ -100,7 +79,7 @@
 						},
 						{
 							"key": "city",
-							"value": "SaoPaulo",
+							"value": "Sao Paulo",
 							"type": "text"
 						},
 						{
@@ -120,12 +99,12 @@
 						},
 						{
 							"key": "registration_video",
-							"type": "file",
-							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+							"value": "https://www.youtube.com/watch?v=RbLbps75hVw",
+							"type": "text"
 						},
 						{
 							"key": "born_date",
-							"value": "2000-03-01",
+							"value": "1993-03-01",
 							"type": "text"
 						}
 					]
@@ -156,12 +135,12 @@
 					"formdata": [
 						{
 							"key": "full_name",
-							"value": "issomesmojnvf",
+							"value": "Nathan Camilo",
 							"type": "text"
 						},
 						{
 							"key": "cpf",
-							"value": "562.809.342-37",
+							"value": "521.009.590-31",
 							"type": "text"
 						},
 						{
@@ -196,18 +175,18 @@
 						},
 						{
 							"key": "registration_video",
-							"type": "file",
-							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+							"value": "https://www.youtube.com/watch?v=BREONGQ0bYE",
+							"type": "text"
 						},
 						{
 							"key": "born_date",
-							"value": "2000-03-01",
+							"value": "2000-03-09",
 							"type": "text"
 						}
 					]
 				},
 				"url": {
-					"raw": "http://localhost:8000/api/usuarios/29b4df55-81f0-4e9c-b6d9-062e43ae18ab/",
+					"raw": "http://localhost:8000/api/usuarios/cd857cb4-777e-4527-ab96-46fc03d8caa6/",
 					"protocol": "http",
 					"host": [
 						"localhost"
@@ -216,7 +195,7 @@
 					"path": [
 						"api",
 						"usuarios",
-						"29b4df55-81f0-4e9c-b6d9-062e43ae18ab",
+						"cd857cb4-777e-4527-ab96-46fc03d8caa6",
 						""
 					]
 				}

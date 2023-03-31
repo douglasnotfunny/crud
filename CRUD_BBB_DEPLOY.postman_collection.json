@@ -56,8 +56,8 @@
 						},
 						{
 							"key": "registration_video",
-							"type": "file",
-							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+							"value": "https://www.youtube.com/watch?v=ZNJrHVCW6Fw",
+							"type": "text"
 						},
 						{
 							"key": "born_date",
@@ -100,28 +100,6 @@
 						"api",
 						"usuarios",
 						""
-					]
-				}
-			},
-			"response": []
-		},
-		{
-			"name": "specific user",
-			"request": {
-				"method": "GET",
-				"header": [],
-				"url": {
-					"raw": "http://douglassg10.pythonanywhere.com/api/usuarios/f1cd6b39-c57a-4038-9129-e8dc13ace962",
-					"protocol": "http",
-					"host": [
-						"douglassg10",
-						"pythonanywhere",
-						"com"
-					],
-					"path": [
-						"api",
-						"usuarios",
-						"f1cd6b39-c57a-4038-9129-e8dc13ace962"
 					]
 				}
 			},
@@ -198,8 +176,8 @@
 						},
 						{
 							"key": "registration_video",
-							"type": "file",
-							"src": "/C:/Users/douglas.goncalves_so/Videos/video.mp4"
+							"value": "https://www.youtube.com/watch?v=ZNJrHVCW6Fw",
+							"type": "text"
 						},
 						{
 							"key": "born_date",
