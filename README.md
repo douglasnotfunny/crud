@@ -61,6 +61,7 @@ Para usá-la localmente siga os passos abaixo:
   9.2. Como a aplicação foi criada em Django Rest, também pode ser usado o POSTMAN para envio das informações. Nesse repositório contém a collection usada para testes locais. Basta importar o arquivo de nome CRUD_BBB.postman_collection.json que se encontra na raiz do projeto.
 
   OBS: A aplicação têm dependência do Redis, por favor instalá-lo para executar o endpoint GET
+  
   OBS2: Para executar o celery execute o comanda abaixo:
   
     celery -A proj worker -l INFO
