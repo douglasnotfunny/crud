@@ -59,5 +59,5 @@ Para usá-la localmente siga os passos abaixo:
   9.1. Para testar o CRUD dos candidatos do BBB 24 pode ser usada a tela http://localhost:8000/api/usuarios/ 
   
   9.2. Como a aplicação foi criada em Django Rest, também pode ser usado o POSTMAN para envio das informações. Nesse repositório contém a collection usada para testes locais. Basta importar o arquivo de nome CRUD_BBB.postman_collection.json que se encontra na raiz do projeto.
-  
-  10. A API também foi deployada no link com os mesmos path http://douglassg10.pythonanywhere.com/api/usuarios/ a collection da aplicação deployada está no arquivo CRUD_BBB_DEPLOY.postman_collection.json se encontra na raiz do projeto.
+
+  OBS: A aplicação têm dependência do Redis, por favor instalá-lo para executar o endpoint GET
