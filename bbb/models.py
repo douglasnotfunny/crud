@@ -31,7 +31,7 @@ class Usuarios(models.Model):
          raise ValidationError("O URL fornecido não é um link do YouTube.")
 
    id = models.UUIDField(primary_key=True, default=uuid4, editable=False)
-   registration_date = models.DateTimeField(default=date, null=True)
+   registration_date = models.DateTimeField(auto_now_add=True, editable=True, null=True)
    full_name = models.CharField(
                               max_length=255,
                               null=False,
