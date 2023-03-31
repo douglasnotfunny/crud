@@ -28,7 +28,7 @@ Para usá-la localmente siga os passos abaixo:
    
   3.2. Ative o ambiente, caso seja Linux com o comando abaixo:
     
-    source venv/bin/activate
+    source venv/Scripts/activate && cd crud
   
   4. Instale as bibliotecas utilizadas no projeto
   
